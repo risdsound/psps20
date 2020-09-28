@@ -1,4 +1,4 @@
-#N canvas 0 42 1680 776 12;
+#N canvas 0 42 2235 854 12;
 #X floatatom 1597 471 5 0 0 0 - - -;
 #X floatatom 1289 449 5 0 0 0 - - -;
 #X msg 347 125 0;
@@ -37,11 +37,11 @@
 #X obj 1519 372 *~;
 #X obj 580 178 line~, f 10;
 #X obj 580 92 pack f 100;
-#X obj 992 124 inlet;
-#X obj 1039 124 r \$1;
+#X obj 1781 282 inlet;
+#X obj 1828 282 r \$1;
 #X obj 33 43 hsl 200 20 0 1 0 0 empty empty gain 204 10 0 10 -262144
 -1 -1 0 1;
-#X obj 994 175 route /gain /ramp /main /subs;
+#X obj 1783 333 route /gain /ramp /main /subs;
 #N canvas 0 82 1900 758 clip_filter_trim_25_speakers 0;
 #X obj 30 416 clip~ -1 1;
 #X obj 30 360 *~ 0.1;
