@@ -13,6 +13,7 @@
 #X obj 224 265 dac~;
 #X obj 149 118 noise~;
 #X obj 187 157 *~ 0.3;
+#X text 507 19 sustain as time (ms);
 #X connect 0 0 8 1;
 #X connect 1 0 0 0;
 #X connect 2 0 3 0;
