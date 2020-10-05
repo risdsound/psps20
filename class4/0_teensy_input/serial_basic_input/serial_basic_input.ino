@@ -19,10 +19,10 @@ int analog_pins[] = {
 };
 
 // digital_values array size, must be constant
-const int num_of_digital_pins = 3; // total numer of digital pins
+const int num_of_digital_pins = 1; // total numer of digital pins
 int digital_values[num_of_digital_pins];
 int digital_pins [] = {
-  0, 5, 10, // list each digital pin to use
+  0, // list each digital pin to use
 };
 
 
@@ -36,12 +36,12 @@ void setup() {
   //  pinMode(2, INPUT_PULLUP);
   //  pinMode(3, INPUT_PULLUP);
   //  pinMode(4, INPUT_PULLUP);
-  pinMode(5, INPUT_PULLUP);
+  // pinMode(5, INPUT_PULLUP);
   //  pinMode(6, INPUT_PULLUP);
   //  pinMode(7, INPUT_PULLUP);
   //  pinMode(8, INPUT_PULLUP);
   //  pinMode(9, INPUT_PULLUP);
-  pinMode(10, INPUT_PULLUP);
+  //  pinMode(10, INPUT_PULLUP);
   //  pinMode(11, INPUT_PULLUP);
   //  pinMode(12, INPUT_PULLUP);
   //  pinMode(13, INPUT_PULLUP);
