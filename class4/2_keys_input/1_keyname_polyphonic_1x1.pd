@@ -1,4 +1,4 @@
-#N canvas 0 158 1680 870 10;
+#N canvas 299 24 1280 755 10;
 #X obj 241 28 keyname, f 8;
 #X obj 242 159 route q w e r t y u, f 48;
 #X obj 242 110 pack s f;
@@ -84,7 +84,7 @@ e1 /release 400 \;;
 #X text 453 72 strategy: each key with it's own ocillator;
 #X obj 652 404 change;
 #X obj 486 402 change;
-#X obj 317 399 change;
+#X obj 314 391 change;
 #X obj 1243 402 change;
 #X obj 1077 402 change;
 #X obj 821 402 change;
