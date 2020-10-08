@@ -1,4 +1,4 @@
-#N canvas 759 72 1077 822 12;
+#N canvas 603 72 1077 822 12;
 #X text 106 80 Define text object and load file;
 #X obj 113 145 text define -k test;
 #A set ------------------------ 1 \; /param1 300 200 400 100 \; /param2
