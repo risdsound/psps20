@@ -1,31 +1,31 @@
 /*
 
-RISD CTC/DM-2001
-Programming Sound: Performance Systems
-Prof. Shawn Greenlee
+  RISD CTC/DM-2001
+  Programming Sound: Performance Systems
+  Prof. Shawn Greenlee
 
-Teensy LC starter code
+  Teensy LC starter code
 
-!!! remember, only use the 3.3-volt power pin. DO NOT USE 5-volt or you may fry your board!!!
+  !!! remember, only use the 3.3-volt power pin. DO NOT USE 5-volt or you may fry your board!!!
 
-Code adapted from Yann Seznec www.yannseznec.com
-and pjrc (makers of Teensy). These sources are in public domain.
+  Code adapted from Yann Seznec www.yannseznec.com
+  and pjrc (makers of Teensy). These sources are in public domain.
 
-You must have Teensyduino installed:
-https://www.pjrc.com/teensy/td_download.html
+  You must have Teensyduino installed:
+  https://www.pjrc.com/teensy/td_download.html
 
-When uploading code to board remember to set: Tools > Board > Teensy LC
+  When uploading code to board remember to set: Tools > Board > Teensy LC
 
-&
+  &
 
-Set: Tools > USB Type > MIDI
+  Set: Tools > USB Type > MIDI
 
-The main things you have to do to this code:
-1. Set the total number of analog pins you will use.
-2. List which analog pins you are connecting.
-3. Set the total numer of digital pins you will use.
-4. List which digital pins you are connecting.
-5. Set the pin mode for all digital pins in use, comment out what you are not using. 
+  The main things you have to do to this code:
+  1. Set the total number of analog pins you will use.
+  2. List which analog pins you are connecting.
+  3. Set the total numer of digital pins you will use.
+  4. List which digital pins you are connecting.
+  5. Set the pin mode for all digital pins in use, comment out what you are not using.
 
 */
 
@@ -50,40 +50,40 @@ int digitalpincc[] = {
 int digInputcc[numDigPinsCC];
 
 // the MIDI channel number to send messages
-const int channel = 1; // don't change unless you know what you are doing 
+const int channel = 1; // don't change unless you know what you are doing
 
-elapsedMillis msec = 0; // don't change 
+elapsedMillis msec = 0; // don't change
 
 void setup() {
 
   // This tells the digital pins how to function, comment out any unused pins
 
- pinMode(0, INPUT_PULLUP);
-// pinMode(1, INPUT_PULLUP);
-// pinMode(2, INPUT_PULLUP);
-// pinMode(3, INPUT_PULLUP);
-//  pinMode(4, INPUT_PULLUP);
-//  pinMode(5, INPUT_PULLUP);
-//  pinMode(6, INPUT_PULLUP);
-//  pinMode(7, INPUT_PULLUP);
-//  pinMode(8, INPUT_PULLUP);
-//  pinMode(9, INPUT_PULLUP);
-//  pinMode(10, INPUT_PULLUP);
-//  pinMode(11, INPUT_PULLUP);
-//  pinMode(12, INPUT_PULLUP);
-//  pinMode(13, INPUT_PULLUP);
+  pinMode(0, INPUT_PULLUP);
+  // pinMode(1, INPUT_PULLUP);
+  // pinMode(2, INPUT_PULLUP);
+  // pinMode(3, INPUT_PULLUP);
+  //  pinMode(4, INPUT_PULLUP);
+  //  pinMode(5, INPUT_PULLUP);
+  //  pinMode(6, INPUT_PULLUP);
+  //  pinMode(7, INPUT_PULLUP);
+  //  pinMode(8, INPUT_PULLUP);
+  //  pinMode(9, INPUT_PULLUP);
+  //  pinMode(10, INPUT_PULLUP);
+  //  pinMode(11, INPUT_PULLUP);
+  //  pinMode(12, INPUT_PULLUP);
+  //  pinMode(13, INPUT_PULLUP);
 }
 
 
 /*
 
-OK, if you've gotten this far you should be all set with your code.
+  OK, if you've gotten this far you should be all set with your code.
 
-Click the Verify button and Teensyduino should launch.
+  Click the Verify button and Teensyduino should launch.
 
-DO NOT CHANGE ANYTHING BELOW THIS COMMENT
+  DO NOT CHANGE ANYTHING BELOW THIS COMMENT
 
-UNLESS YOU KNOW WHAT YOU ARE DOING!
+  UNLESS YOU KNOW WHAT YOU ARE DOING!
 
 
 */

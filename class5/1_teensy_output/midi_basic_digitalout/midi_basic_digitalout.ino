@@ -37,10 +37,10 @@ int analogPins[] = {
 // set digital input pins
 // set for none in this example
 
-int const numDigPinsCC = 1; // number of digital pins to send CC
+int const numDigPinsCC = 0; // number of digital pins to send CC
 int currentDigcc[numDigPinsCC];
 int digitalpincc[] = {
-  0, // which digital pins to use for sending CC
+  // which digital pins to use for sending CC
 };
 int digInputcc[numDigPinsCC];
 
@@ -106,7 +106,7 @@ void ccled (byte channel, byte number, byte value) {
 
 
 void setup() {
-  pinMode(0, INPUT_PULLUP);
+ // pinMode(0, INPUT_PULLUP);
 //  pinMode(1, OUTPUT);
 //  pinMode(2, OUTPUT);
   pinMode(3, OUTPUT);

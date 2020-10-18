@@ -13,10 +13,10 @@
 -150 0 -120 0 -90 0 -60 0 -30 0 0 0 45 32 90 32 135 32 180 32 -135
 32 -90 32 -45 32 0 32 90 66 180 66 -90 66 0 66 0 90 \;;
 #X obj -95 200 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 78 256;
+-262144 -1 -1 0 256;
 #X obj -95 248 pack f f, f 15;
 #X obj -35 199 nbx 5 14 0 90 0 0 empty empty empty 0 -8 0 10 -262144
--1 -1 89 256;
+-1 -1 31.8898 256;
 #X obj -35 218 t b f;
 #X obj -95 227 f;
 #X obj 76 243 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
@@ -178,8 +178,8 @@ f f, f 251;
 #X connect 0 0 121 0;
 #X connect 0 0 125 0;
 #X connect 0 0 129 0;
-#X connect 0 0 133 1;
 #X connect 0 0 137 0;
+#X connect 0 0 133 0;
 #X connect 2 0 6 0;
 #X connect 3 0 9 0;
 #X connect 4 0 5 0;
