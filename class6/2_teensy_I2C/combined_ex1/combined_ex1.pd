@@ -1,4 +1,4 @@
-#N canvas 565 23 1019 681 10;
+#N canvas 525 23 1019 681 10;
 #X msg 53 169 close;
 #X obj 45 8 cnv 15 440 60 empty empty empty 20 12 0 14 -200075 -66577
 0;
@@ -37,11 +37,11 @@ It was written by Alexandros Drymonitis. \; See https://github.com/alexdrymoniti
 #X obj 2 141 r rgb;
 #X text 80 444 send rgb values;
 #X obj 241 408 hsl 128 15 0 255 0 0 empty empty empty -2 -8 0 10 -258113
--1 -1 0 1;
+-1 -1 8500 1;
 #X obj 311 427 hsl 128 15 0 255 0 0 empty empty empty -2 -8 0 10 -4034
--1 -1 0 1;
+-1 -1 5500 1;
 #X obj 381 448 hsl 128 15 0 255 0 0 empty empty empty -2 -8 0 10 -4160
--1 -1 0 1;
+-1 -1 6900 1;
 #X obj 378 539 t b f;
 #X obj 320 563 f;
 #X floatatom 308 500 5 0 0 0 - - -;
@@ -74,7 +74,7 @@ It was written by Alexandros Drymonitis. \; See https://github.com/alexdrymoniti
 #X obj 641 497 r y:;
 #X obj 752 498 r z:;
 #X obj 82 492 bangfilter 100;
-#X obj 44 212 comport 4 9600;
+#X obj 44 212 comport 1 9600;
 #X connect 0 0 63 0;
 #X connect 2 0 63 0;
 #X connect 3 0 4 0;
