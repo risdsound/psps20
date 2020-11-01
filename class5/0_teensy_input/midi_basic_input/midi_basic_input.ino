@@ -41,10 +41,10 @@ int analogPins[] = {
 
 // set digital pins
 
-int const numDigPinsCC = 1; // change the number to how many digital pins you will use
+int const numDigPinsCC = 4; // change the number to how many digital pins you will use
 int currentDigcc[numDigPinsCC];
 int digitalpincc[] = {
-  0, // list the numbers of each pin you will use seperated by a comma
+  0, 1, 2, 3 // list the numbers of each pin you will use seperated by a comma
 };
 
 int digInputcc[numDigPinsCC];
@@ -59,9 +59,9 @@ void setup() {
   // This tells the digital pins how to function, comment out any unused pins
 
   pinMode(0, INPUT_PULLUP);
-  // pinMode(1, INPUT_PULLUP);
-  // pinMode(2, INPUT_PULLUP);
-  // pinMode(3, INPUT_PULLUP);
+  pinMode(1, INPUT_PULLUP);
+  pinMode(2, INPUT_PULLUP);
+  pinMode(3, INPUT_PULLUP);
   //  pinMode(4, INPUT_PULLUP);
   //  pinMode(5, INPUT_PULLUP);
   //  pinMode(6, INPUT_PULLUP);
