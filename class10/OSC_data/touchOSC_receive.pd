@@ -1,4 +1,4 @@
-#N canvas 111 45 1500 737 12;
+#N canvas 478 83 1500 737 12;
 #X obj 672 173 netreceive -u -b;
 #X msg 936 118 listen 0;
 #X text 1025 117 stop listening;
@@ -81,9 +81,6 @@ data in Pd.;
 app available for iOS and Android called TouchOSC. TouchOSC must be
 configured with the IP address of your computer and to send on port
 8000 (in this example).;
-#X text 584 34 You need to install the library "zexy" for this to work
-(particular to how TouchOSC sends data). Go to Help > Find Externals
-;
 #X obj 1189 98 route accxyz;
 #X obj 1189 134 unpack f f f;
 #X floatatom 1189 185 5 0 0 0 - - -;
@@ -92,13 +89,17 @@ configured with the IP address of your computer and to send on port
 #X obj 672 280 list trim;
 #X text 1183 68 enable acceleromter in TouchOSC;
 #X text 774 117 listen on port 8000;
+#X text 584 34 You need to install the library "zexy" for this to work
+(particular to how TouchOSC sends data). Go to Help > Find Externals.
+Version recommmended is zexy-v0-0extended from 2015-12-10 (oldest currently
+listed as of 11/22/20);
 #X connect 0 0 4 0;
 #X connect 1 0 0 0;
 #X connect 4 0 8 0;
 #X connect 6 0 0 0;
 #X connect 7 0 5 0;
 #X connect 8 0 9 0;
-#X connect 9 0 79 0;
+#X connect 9 0 78 0;
 #X connect 12 0 13 0;
 #X connect 12 1 14 0;
 #X connect 12 2 15 0;
@@ -151,15 +152,15 @@ configured with the IP address of your computer and to send on port
 #X connect 63 0 12 0;
 #X connect 63 1 28 0;
 #X connect 63 2 64 0;
-#X connect 63 3 74 0;
+#X connect 63 3 73 0;
 #X connect 64 0 65 0;
 #X connect 64 1 68 0;
 #X connect 65 0 66 0;
 #X connect 65 1 67 0;
 #X connect 68 0 69 0;
 #X connect 68 1 70 0;
+#X connect 73 0 74 0;
 #X connect 74 0 75 0;
-#X connect 75 0 76 0;
-#X connect 75 1 77 0;
-#X connect 75 2 78 0;
-#X connect 79 0 63 0;
+#X connect 74 1 76 0;
+#X connect 74 2 77 0;
+#X connect 78 0 63 0;

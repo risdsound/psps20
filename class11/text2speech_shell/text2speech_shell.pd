@@ -1,0 +1,12 @@
+#N canvas 335 126 1006 564 10;
+#X obj 322 265 shell;
+#X obj 322 180 list prepend say;
+#X msg 322 118 Hello Yolanda;
+#X obj 322 226 list trim list;
+#X msg 377 148 Westworld is on tonight at nine p m;
+#X text 560 251 This requires the [shell] object which is a part of
+the ggee library;
+#X connect 1 0 3 0;
+#X connect 2 0 1 0;
+#X connect 3 0 0 0;
+#X connect 4 0 1 0;

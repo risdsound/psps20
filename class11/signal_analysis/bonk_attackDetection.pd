@@ -1,0 +1,22 @@
+#N canvas 675 444 898 479 12;
+#X obj 309 107 bonk~;
+#X msg 293 61 thresh 2.5 5;
+#X text 392 51 Set low and high thresholds. Signal growth must exceed
+the high one and then fall to the low one to make an attack.;
+#X obj 219 58 adc~;
+#X obj 349 145 unpack f f f;
+#X floatatom 327 196 5 0 0 0 - - -;
+#X floatatom 382 192 5 0 0 0 - - -;
+#X floatatom 447 196 5 0 0 0 - - -;
+#X obj 315 292 select 0;
+#X obj 316 332 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 3 146 detect an attack from an audio signal;
+#X connect 0 1 4 0;
+#X connect 1 0 0 0;
+#X connect 3 0 0 0;
+#X connect 4 0 5 0;
+#X connect 4 1 6 0;
+#X connect 4 2 7 0;
+#X connect 5 0 8 0;
+#X connect 8 0 9 0;
