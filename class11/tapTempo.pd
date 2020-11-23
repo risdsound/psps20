@@ -1,10 +1,10 @@
-#N canvas 398 371 842 552 10;
-#X obj 80 151 t b b;
-#X obj 80 195 timer;
-#X obj 80 92 bng 15 250 50 0 empty empty empty 0 -6 0 10 -262144 -1
+#N canvas 556 24 1132 965 10;
+#X obj 84 199 t b b;
+#X obj 84 243 timer;
+#X obj 84 140 bng 15 250 50 0 empty empty empty 0 -6 0 10 -262144 -1
 -1;
-#X obj 80 237 expr 60000 / $f1;
-#X floatatom 80 273 10 0 0 0 - - -;
+#X obj 84 285 expr 60000 / $f1;
+#X floatatom 84 321 10 0 0 0 - - -;
 #N canvas 0 23 1040 834 superTT 0;
 #X obj 307 139 t b b;
 #X obj 307 183 timer;
@@ -72,19 +72,26 @@
 #X connect 26 0 9 0;
 #X connect 27 0 21 0;
 #X connect 27 0 23 0;
-#X restore 209 237 pd superTT;
-#X floatatom 209 274 8 0 0 3 ms - -;
-#X floatatom 266 274 10 0 0 3 bpm - -;
-#X obj 197 87 pdcontrol;
+#X restore 213 285 pd superTT;
+#X floatatom 213 322 8 0 0 3 ms - -;
+#X floatatom 270 322 10 0 0 3 bpm - -;
+#X obj 198 88 pdcontrol;
 #X msg 197 59 browse https://forum.pdpatchrepo.info/topic/1494/tap-tempo/2
 ;
 #X text 197 33 example by domien;
-#X obj 225 388 metro 100;
-#X obj 224 360 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 229 436 metro 100;
+#X obj 228 408 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 225 423 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 229 471 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X text 292 238 averages over 6 taps;
+#X text 296 286 averages over 6 taps;
+#X obj 74 42 > 60;
+#X obj 73 15 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 18600 1;
+#X obj 81 67 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1 1
+;
+#X obj 82 88 change;
+#X obj 83 109 select 1;
 #X connect 0 0 1 0;
 #X connect 0 1 1 1;
 #X connect 1 0 3 0;
@@ -97,3 +104,8 @@
 #X connect 9 0 8 0;
 #X connect 11 0 13 0;
 #X connect 12 0 11 0;
+#X connect 15 0 17 0;
+#X connect 16 0 15 0;
+#X connect 17 0 18 0;
+#X connect 18 0 19 0;
+#X connect 19 0 2 0;
