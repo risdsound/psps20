@@ -1,0 +1,198 @@
+#N canvas 456 23 1216 789 10;
+#X declare -lib Gem;
+#X obj 133 268 pix_dump;
+#X obj 52 483 pix_texture;
+#X msg 58 462 quality 0;
+#X obj 52 508 square 2;
+#X obj 58 439 loadbang;
+#N canvas 0 22 454 304 gemwin 0;
+#X obj 132 136 gemwin;
+#X obj 67 89 outlet;
+#X obj 67 10 inlet;
+#X obj 67 41 route create;
+#X msg 67 70 set destroy;
+#X msg 182 68 set create;
+#X msg 132 112 create \, 1;
+#X msg 238 112 destroy;
+#N canvas 87 154 247 179 Gem.init 0;
+#X obj 118 46 loadbang;
+#X msg 118 81 reset;
+#X obj 118 113 outlet;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X restore 289 80 pd Gem.init;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;
+#X connect 3 0 6 0;
+#X connect 3 1 5 0;
+#X connect 3 1 7 0;
+#X connect 4 0 1 0;
+#X connect 5 0 1 0;
+#X connect 6 0 0 0;
+#X connect 7 0 0 0;
+#X connect 8 0 0 0;
+#X restore 90 74 pd gemwin;
+#X msg 90 50 destroy;
+#X obj 90 9 declare -lib Gem;
+#X obj 133 227 pix_rgb2hsv;
+#X obj 78 107 gemhead;
+#X msg 226 93 1;
+#X msg 197 93 0;
+#X msg 255 93 2;
+#X msg 284 93 3;
+#X msg 313 93 4;
+#X msg 342 93 5;
+#X msg 371 93 6;
+#X msg 400 93 7;
+#X msg 429 93 8;
+#X msg 458 93 9;
+#X msg 487 93 10;
+#X obj 114 136 pix_multiimage temp*.JPG 11;
+#X msg 516 93 11;
+#X obj 23 414 pix_hsv2rgb;
+#X obj 133 198 pix_resize 8 8;
+#X obj 22 389 pix_set 8 8;
+#N canvas 241 31 450 278 (subpatch) 0;
+#X array hue 64 float 1;
+#A 0 0.992157 0.921569 0.843137 0.772549 0.698039 0.647059 0.568627
+0.494118 0.921569 0.847059 0.772549 0.701961 0.647059 0.568627 0.494118
+0.431373 0.847059 0.776471 0.701961 0.65098 0.572549 0.494118 0.431373
+0.356863 0.776471 0.701961 0.65098 0.572549 0.494118 0.431373 0.360784
+0.309804 0.705882 0.65098 0.572549 0.498039 0.435294 0.360784 0.309804
+0.235294 0.654902 0.576471 0.498039 0.435294 0.360784 0.313726 0.235294
+0.160784 0.576471 0.505882 0.435294 0.364706 0.313726 0.239216 0.164706
+0.0901961 0.509804 0.435294 0.364706 0.313726 0.239216 0.164706 0.0941177
+0.0196078;
+#X coords 0 1 64 0 200 140 1 0 0;
+#X restore 481 494 graph;
+#X obj 322 424 array set hue;
+#X obj 322 348 unpack f f f f;
+#X floatatom 322 373 5 0 0 0 - - -;
+#X obj 322 327 list-group 4;
+#X msg 484 650 \; hue const 0;
+#X obj 322 392 list-group 64;
+#X obj 797 407 tabread hue;
+#X floatatom 797 362 5 0 0 0 - - -;
+#X floatatom 797 447 5 0 0 0 - - -;
+#X obj 797 206 metro 250;
+#X obj 797 236 f 0;
+#X obj 845 237 + 1;
+#X obj 797 178 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X text 151 50 Create window and render / destroy closes window and
+stops rendering;
+#X text 206 8 make sure Gem library is loaded;
+#X text 237 198 reduce image size to 8x8 (64 pixels);
+#X text 215 225 convert RGB to HSV values;
+#X text 198 268 get numbers for all pixels in image;
+#X text 421 326 break into groups of 4 (hue \, saturation \, value
+\, alpha);
+#X text 419 348 filter for just the hue value;
+#X text 421 392 group all hue values into a new list of 64;
+#X text 422 424 put values into an array;
+#X text 569 657 clear array;
+#X obj 525 188 cnv 15 130 60 empty empty empty 20 12 0 14 -257985 -66577
+0;
+#X msg 554 214 bang;
+#X text 527 194 trigger the pix_dump;
+#X obj 551 85 cnv 15 240 30 empty empty empty 20 12 0 14 -257985 -66577
+0;
+#X text 550 92 choose image from folder where patch is;
+#X obj 797 282 mod 8;
+#X text 841 281 constrain to 8 columns (8 pixels per row);
+#X obj 862 328 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
+-1 -1 5;
+#X text 992 326 select row (1 - 8);
+#X obj 800 493 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X floatatom 812 308 5 0 0 0 - - -;
+#X obj 862 351 * 8;
+#X obj 797 329 + 0;
+#X floatatom 797 620 5 0 0 0 - - -;
+#X obj 797 698 osc~;
+#X obj 797 737 dac~;
+#X obj 797 674 line~;
+#X msg 797 647 \$1 30;
+#X obj 797 592 ps.scales;
+#X obj 797 568 ftom;
+#X msg 848 568 /scale 0 1 2 3 4 5 6 7 8 9 10 11;
+#X text 1054 565 chromatic;
+#X obj 848 546 loadbang;
+#X obj 797 545 + 100;
+#X obj 797 521 * 1900;
+#X text 942 492 use values for pitch????;
+#X text 796 151 translation of hue to pitch (starting point);
+#X text 291 135 argument sets how many images in the set \, * is a
+wildcard for the file name \, meaning it is replaced by the incoming
+number to the right inlet (included images are 256 x 256 pixels);
+#X text 97 386 put data back into pixel form;
+#X text 101 414 convert HSV to RGB;
+#X text 129 482 use image as texture;
+#X text 121 510 draw square with pixels;
+#X text 866 591 abstraction to make data more musical with scales;
+#X text 457 620 red;
+#X text 102 660 red..yellow..green..cyan..blue..magenta..red;
+#X text 439 601 yellow;
+#X text 445 580 green;
+#X text 451 559 cyan;
+#X text 451 538 blue;
+#X text 433 517 magenta;
+#X text 457 496 red;
+#X text 612 6 require Gem library \, tested: Gem/0.94 (dated 2019-03-14)
+\,;
+#X connect 0 1 25 1;
+#X connect 0 1 30 0;
+#X connect 1 0 3 0;
+#X connect 2 0 1 0;
+#X connect 4 0 2 0;
+#X connect 5 0 6 0;
+#X connect 6 0 5 0;
+#X connect 8 0 0 0;
+#X connect 9 0 21 0;
+#X connect 9 0 25 0;
+#X connect 10 0 21 1;
+#X connect 11 0 21 1;
+#X connect 12 0 21 1;
+#X connect 13 0 21 1;
+#X connect 14 0 21 1;
+#X connect 15 0 21 1;
+#X connect 16 0 21 1;
+#X connect 17 0 21 1;
+#X connect 18 0 21 1;
+#X connect 19 0 21 1;
+#X connect 20 0 21 1;
+#X connect 21 0 24 0;
+#X connect 22 0 21 1;
+#X connect 23 0 1 0;
+#X connect 24 0 8 0;
+#X connect 25 0 23 0;
+#X connect 28 0 29 0;
+#X connect 29 0 32 0;
+#X connect 30 0 28 0;
+#X connect 32 0 27 0;
+#X connect 33 0 35 0;
+#X connect 34 0 33 0;
+#X connect 35 0 59 0;
+#X connect 36 0 37 0;
+#X connect 37 0 38 0;
+#X connect 37 0 55 0;
+#X connect 38 0 37 1;
+#X connect 39 0 36 0;
+#X connect 51 0 0 0;
+#X connect 55 0 62 0;
+#X connect 57 0 61 0;
+#X connect 59 0 74 0;
+#X connect 60 0 62 1;
+#X connect 61 0 60 0;
+#X connect 62 0 34 0;
+#X connect 63 0 67 0;
+#X connect 64 0 65 0;
+#X connect 64 0 65 1;
+#X connect 66 0 64 0;
+#X connect 67 0 66 0;
+#X connect 68 0 63 0;
+#X connect 69 0 68 0;
+#X connect 70 0 68 1;
+#X connect 72 0 70 0;
+#X connect 73 0 69 0;
+#X connect 74 0 73 0;
