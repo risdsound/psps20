@@ -97,7 +97,7 @@ It was written by Alexandros Drymonitis. \; See https://github.com/alexdrymoniti
 #X floatatom 311 487 8 0 0 3 ms - -;
 #X floatatom 368 487 10 0 0 3 bpm - -;
 #X obj 327 601 metro 100;
-#X obj 326 573 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 326 573 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 327 636 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
@@ -112,7 +112,7 @@ It was written by Alexandros Drymonitis. \; See https://github.com/alexdrymoniti
 348 252 211 283 364 387 484 954 954 954 954 433 111 307 479 426 288
 215 254 330 371 428 887 954 953 954 846 220 223 433 459 341 242 235
 313 373 385 639 955 954 953 952 474 205 374 466 388 258 210;
-#X coords 0 1000 99 0 200 140 1 0 0;
+#X coords 0 1024 99 0 200 140 1 0 0;
 #X restore 653 451 graph;
 #X obj 642 388 tabwrite pulsegraph;
 #X obj 721 272 metro 50;

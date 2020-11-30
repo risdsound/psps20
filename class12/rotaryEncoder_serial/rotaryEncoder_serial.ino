@@ -47,7 +47,7 @@ void loop() {
     Serial.print(" ");
     Serial.println(" ");
 
-    positionLeft = newLeft;
+    positionLeft = newLeft; 
     positionRight = newRight;
   }
   for (int i = 0; i < num_of_digital_pins; i++) digital_values[i] = !digitalRead(digital_pins[i]);
