@@ -1,0 +1,136 @@
+#N canvas 530 50 1216 770 10;
+#X declare -lib Gem;
+#X obj 52 483 pix_texture;
+#X msg 58 462 quality 0;
+#X obj 52 508 square 2;
+#X obj 514 77 loadbang;
+#N canvas 0 22 454 304 gemwin 0;
+#X obj 132 136 gemwin;
+#X obj 67 89 outlet;
+#X obj 67 10 inlet;
+#X obj 67 41 route create;
+#X msg 67 70 set destroy;
+#X msg 182 68 set create;
+#X msg 132 112 create \, 1;
+#X msg 238 112 destroy;
+#N canvas 87 154 247 179 Gem.init 0;
+#X obj 118 46 loadbang;
+#X msg 118 81 reset;
+#X obj 118 113 outlet;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X restore 289 80 pd Gem.init;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;
+#X connect 3 0 6 0;
+#X connect 3 1 5 0;
+#X connect 3 1 7 0;
+#X connect 4 0 1 0;
+#X connect 5 0 1 0;
+#X connect 6 0 0 0;
+#X connect 7 0 0 0;
+#X connect 8 0 0 0;
+#X restore 90 74 pd gemwin;
+#X msg 90 50 create;
+#X obj 90 9 declare -lib Gem;
+#X obj 22 389 pix_set 8 8;
+#N canvas 241 31 450 278 (subpatch) 0;
+#X array thermal 64 float 1;
+#A 0 0.21 0.2075 0.2025 0.2025 0.1975 0.2025 0.2025 0.1975 0.2125 0.2125
+0.2025 0.2075 0.2 0.1975 0.2025 0.21 0.21 0.215 0.2125 0.2075 0.2025
+0.2025 0.2025 0.205 0.2175 0.2175 0.2125 0.205 0.21 0.2025 0.205 0.205
+0.2175 0.2125 0.2175 0.215 0.2075 0.205 0.2025 0.215 0.2125 0.22 0.2175
+0.215 0.2175 0.2125 0.2175 0.215 0.22 0.215 0.22 0.2175 0.22 0.205
+0.21 0.2075 0.2175 0.2125 0.21 0.2225 0.2225 0.215 0.2075 0.215;
+#X coords 0 1 64 0 200 140 1 0 0;
+#X restore 415 384 graph;
+#X text 151 50 Create window and render / destroy closes window and
+stops rendering;
+#X text 206 8 make sure Gem library is loaded;
+#X text 677 316 put values into an array;
+#X text 523 601 clear array;
+#X text 129 482 use image as texture;
+#X text 121 510 draw square with pixels;
+#X text 612 6 require Gem library \, tested: Gem/0.94 (dated 2019-03-14)
+\,;
+#X msg 66 144 close;
+#X msg 57 117 devices;
+#X obj 57 231 s;
+#X obj 57 209 serial_print any;
+#X obj 57 187 comport 1 9600;
+#X msg 117 144 open 1;
+#X obj 422 204 r pixels:;
+#X obj 35 300 gemhead;
+#X obj 422 228 list split 64;
+#X obj 562 315 array set thermal;
+#X obj 422 262 list-mult;
+#X msg 553 149 0.01 0.01 0.01 0.01 0.01 0.01 0.01 0.01 0.01 0.01 0.01
+0.01 0.01 0.01 0.01 0.01 0.01 0.01 0.01 0.01 0.01 0.01 0.01 0.01 0.01
+0.01 0.01 0.01 0.01 0.01 0.01 0.01 0.01 0.01 0.01 0.01 0.01 0.01 0.01
+0.01 0.01 0.01 0.01 0.01 0.01 0.01 0.01 0.01 0.01 0.01 0.01 0.01 0.01
+0.01 0.01 0.01 0.01 0.01 0.01 0.01 0.01 0.01 0.01 0.01;
+#X msg 96 300 GREY;
+#X obj 422 314 list-rev;
+#X msg 415 595 \; thermal const 0;
+#X obj 514 106 t b b b;
+#X text 113 388 put data into pixel form;
+#X floatatom 673 566 5 0 0 0 - - -;
+#X floatatom 673 651 5 0 0 0 - - -;
+#X obj 673 410 metro 250;
+#X obj 673 440 f 0;
+#X obj 721 441 + 1;
+#X obj 673 382 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 673 486 mod 8;
+#X text 717 485 constrain to 8 columns (8 pixels per row);
+#X obj 738 532 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
+-1 -1 0;
+#X text 868 530 select row (1 - 8);
+#X obj 676 697 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 2381 1;
+#X floatatom 688 512 5 0 0 0 - - -;
+#X obj 738 555 * 8;
+#X obj 673 533 + 0;
+#X text 818 696 use values for pitch????;
+#X obj 673 611 tabread thermal;
+#X text 411 531 8 rows / 8 columns;
+#X text 411 547 Each group of 8 is a row of 8 columns;
+#X text 700 380 scan row by row;
+#X text 610 29 also included in folder \, some abstractions from the
+list-abs library;
+#X connect 0 0 2 0;
+#X connect 1 0 0 0;
+#X connect 3 0 31 0;
+#X connect 4 0 5 0;
+#X connect 5 0 4 0;
+#X connect 7 0 0 0;
+#X connect 16 0 20 0;
+#X connect 17 0 20 0;
+#X connect 19 0 18 0;
+#X connect 19 1 18 1;
+#X connect 20 0 19 0;
+#X connect 21 0 20 0;
+#X connect 22 0 24 0;
+#X connect 23 0 7 0;
+#X connect 24 0 26 0;
+#X connect 26 0 29 0;
+#X connect 26 0 25 0;
+#X connect 27 0 26 1;
+#X connect 28 0 7 0;
+#X connect 29 0 7 1;
+#X connect 31 0 28 0;
+#X connect 31 1 1 0;
+#X connect 31 2 27 0;
+#X connect 33 0 48 0;
+#X connect 34 0 43 0;
+#X connect 35 0 36 0;
+#X connect 36 0 37 0;
+#X connect 36 0 39 0;
+#X connect 37 0 36 1;
+#X connect 38 0 35 0;
+#X connect 39 0 46 0;
+#X connect 41 0 45 0;
+#X connect 44 0 46 1;
+#X connect 45 0 44 0;
+#X connect 46 0 33 0;
+#X connect 48 0 34 0;
