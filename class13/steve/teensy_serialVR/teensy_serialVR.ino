@@ -46,8 +46,8 @@ int touch_pins[] = {
 
 // LED output
 
-#define NUMBYTES 2 // number of bytes sent by Pd in a "packet"
-int incomingByte[NUMBYTES];
+//#define NUMBYTES 2 // number of bytes sent by Pd in a "packet"
+//int incomingByte[NUMBYTES];
 
 void setup() {
 
@@ -161,15 +161,15 @@ void loop() {
   Serial.println(" ");
 
 
-  // digital output, assign pin and value from Pd
-
-  // look for 2 bytes of data and write them
-  if (Serial.available() > 1) {
-    for ( int i = 0; i < 2; i++) {
-      incomingByte[i] = Serial.read();
-    }
-    digitalWrite(incomingByte[0], incomingByte[1]);
-  }
+//  // digital output, assign pin and value from Pd
+//
+//  // look for 2 bytes of data and write them
+//  if (Serial.available() > 1) {
+//    for ( int i = 0; i < 2; i++) {
+//      incomingByte[i] = Serial.read();
+//    }
+//    digitalWrite(incomingByte[0], incomingByte[1]);
+//  }
 
 
   delay(50);
