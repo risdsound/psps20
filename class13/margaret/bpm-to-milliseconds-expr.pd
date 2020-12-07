@@ -1,0 +1,27 @@
+#N canvas 365 23 1272 819 12;
+#X obj 594 275 expr 60000 / $f1;
+#X floatatom 585 237 5 0 0 0 - - -;
+#X floatatom 592 323 5 0 0 0 - - -;
+#X obj 122 353 metro 200;
+#X obj 122 396 bng 30 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 122 283 tgl 30 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 218 281 expr 1000/($f1/60);
+#X floatatom 218 248 5 0 0 0 - - -;
+#X floatatom 218 316 5 0 0 0 - - -;
+#X msg 217 208 134;
+#X msg 265 208 60;
+#X msg 314 208 110;
+#X text 371 282 BPM to MS;
+#X text 719 276 MS to BPM;
+#X connect 0 0 2 0;
+#X connect 1 0 0 0;
+#X connect 3 0 4 0;
+#X connect 5 0 3 0;
+#X connect 6 0 8 0;
+#X connect 7 0 6 0;
+#X connect 8 0 3 1;
+#X connect 9 0 7 0;
+#X connect 10 0 7 0;
+#X connect 11 0 7 0;
