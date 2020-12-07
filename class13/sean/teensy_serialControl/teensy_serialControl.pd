@@ -1,4 +1,4 @@
-#N canvas 376 23 1529 954 10;
+#N canvas 221 215 1529 954 10;
 #X msg 53 169 close;
 #X obj 45 8 cnv 15 440 60 empty empty empty 20 12 0 14 -200075 -66577
 0;
@@ -136,6 +136,7 @@ It was written by Alexandros Drymonitis. \; See https://github.com/alexdrymoniti
 #X text 543 548 proximity / light;
 #X text 690 352 Twist encoder;
 #X text 1017 436 Twist encoder light;
+#X floatatom 884 174 5 0 0 1 - - -;
 #X connect 0 0 11 0;
 #X connect 2 0 11 0;
 #X connect 4 0 3 0;
@@ -163,6 +164,7 @@ It was written by Alexandros Drymonitis. \; See https://github.com/alexdrymoniti
 #X connect 31 3 30 0;
 #X connect 31 4 32 0;
 #X connect 31 5 33 0;
+#X connect 31 6 118 0;
 #X connect 34 0 36 0;
 #X connect 35 0 37 0;
 #X connect 36 0 35 0;
