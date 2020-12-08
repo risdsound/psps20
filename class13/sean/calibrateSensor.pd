@@ -1,0 +1,30 @@
+#N canvas 287 215 745 411 10;
+#X floatatom 207 67 5 0 0 0 - - -;
+#X obj 227 127 f;
+#X obj 206 180 -, f 4;
+#X obj 206 227 wrap;
+#X obj 206 254 * 127;
+#X floatatom 206 276 5 0 0 0 - - -;
+#X obj 209 350 hsl 100 15 0 127 0 0 empty empty output 20 8 0 10 -262130
+-260097 -1 5600 1;
+#X obj 206 322 line;
+#X msg 206 298 \$1 10;
+#X obj 333 74 bng 15 250 50 0 empty empty calibrate_zero_pt 17 7 0
+10 -262130 -260097 -1;
+#X obj 210 36 hsl 100 15 0 127 0 0 empty empty sensor 20 8 0 10 -262130
+-260097 -1 0 1;
+#X obj 206 205 / 127;
+#X text 330 34 here MIDI value 0-127;
+#X connect 0 0 1 1;
+#X connect 0 0 2 0;
+#X connect 1 0 2 1;
+#X connect 2 0 11 0;
+#X connect 3 0 4 0;
+#X connect 4 0 5 0;
+#X connect 5 0 8 0;
+#X connect 7 0 6 0;
+#X connect 8 0 7 0;
+#X connect 9 0 1 0;
+#X connect 10 0 0 0;
+#X connect 11 0 3 0;
+#X coords 0 411 1 410 130 130 0;
