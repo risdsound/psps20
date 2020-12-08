@@ -1,0 +1,180 @@
+#N canvas 142 51 1418 736 10;
+#X msg 53 169 close;
+#X obj 45 8 cnv 15 440 60 empty empty empty 20 12 0 14 -200075 -66577
+0;
+#X msg 44 142 devices;
+#X obj 44 256 s;
+#X obj 44 234 serial_print any;
+#X text 46 88 Requires [comport] object \; install under Help > Find
+Externals, f 72;
+#X text 52 16 [serial_print]: abstraction that works with Arduinos'
+Serial.print() and Serial.println() functions (with the use of [comport]).
+It was written by Alexandros Drymonitis. \; See https://github.com/alexdrymonitis/Arduino_Pd
+;
+#X symbolatom 137 255 20 0 0 0 - - -;
+#X obj 44 212 comport 1 9600;
+#X msg 104 169 open 1;
+#X floatatom 329 223 5 0 0 0 - - -;
+#X obj 329 179 route 0 1 2 3 4 5 6 7 8 9 10 11, f 83;
+#X obj 329 246 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X floatatom 370 223 5 0 0 0 - - -;
+#X obj 370 246 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X floatatom 411 223 5 0 0 0 - - -;
+#X obj 411 246 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X floatatom 452 223 5 0 0 0 - - -;
+#X obj 452 246 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X floatatom 494 223 5 0 0 0 - - -;
+#X obj 494 246 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X floatatom 535 223 5 0 0 0 - - -;
+#X obj 535 246 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X floatatom 576 223 5 0 0 0 - - -;
+#X obj 576 246 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X floatatom 617 223 5 0 0 0 - - -;
+#X obj 617 246 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X floatatom 659 223 5 0 0 0 - - -;
+#X obj 659 246 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X floatatom 700 223 5 0 0 0 - - -;
+#X obj 700 246 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X floatatom 741 223 5 0 0 0 - - -;
+#X obj 741 246 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X floatatom 782 223 5 0 0 0 - - -;
+#X obj 782 246 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X floatatom 824 223 5 0 0 0 - - -;
+#X obj 824 246 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 329 150 r Cap2:;
+#X floatatom 327 367 5 0 0 0 - - -;
+#X obj 327 323 route 0 1 2 3 4 5 6 7 8 9 10 11, f 83;
+#X obj 327 390 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X floatatom 368 367 5 0 0 0 - - -;
+#X obj 368 390 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X floatatom 409 367 5 0 0 0 - - -;
+#X obj 409 390 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X floatatom 450 367 5 0 0 0 - - -;
+#X obj 450 390 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X floatatom 492 367 5 0 0 0 - - -;
+#X obj 492 390 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X floatatom 533 367 5 0 0 0 - - -;
+#X obj 533 390 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X floatatom 574 367 5 0 0 0 - - -;
+#X obj 574 390 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X floatatom 615 367 5 0 0 0 - - -;
+#X obj 615 390 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X floatatom 657 367 5 0 0 0 - - -;
+#X obj 657 390 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X floatatom 698 367 5 0 0 0 - - -;
+#X obj 698 390 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X floatatom 739 367 5 0 0 0 - - -;
+#X obj 739 390 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X floatatom 780 367 5 0 0 0 - - -;
+#X obj 780 390 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X floatatom 822 367 5 0 0 0 - - -;
+#X obj 822 390 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 327 294 r Cap1:;
+#X obj 938 199 r touch_values:;
+#X floatatom 890 279 5 0 0 0 - - -;
+#X floatatom 931 279 5 0 0 0 - - -;
+#X floatatom 972 279 5 0 0 0 - - -;
+#X floatatom 1013 279 5 0 0 0 - - -;
+#X floatatom 1055 279 5 0 0 0 - - -;
+#X floatatom 1096 279 5 0 0 0 - - -;
+#X floatatom 1137 279 5 0 0 0 - - -;
+#X floatatom 1178 279 5 0 0 0 - - -;
+#X floatatom 1220 279 5 0 0 0 - - -;
+#X obj 938 240 unpack f f f f f f f f f s;
+#X connect 0 0 8 0;
+#X connect 2 0 8 0;
+#X connect 4 0 3 0;
+#X connect 4 1 3 1;
+#X connect 4 1 7 0;
+#X connect 8 0 4 0;
+#X connect 9 0 8 0;
+#X connect 10 0 12 0;
+#X connect 11 0 10 0;
+#X connect 11 1 13 0;
+#X connect 11 2 15 0;
+#X connect 11 3 17 0;
+#X connect 11 4 19 0;
+#X connect 11 5 21 0;
+#X connect 11 6 23 0;
+#X connect 11 7 25 0;
+#X connect 11 8 27 0;
+#X connect 11 9 29 0;
+#X connect 11 10 31 0;
+#X connect 11 11 33 0;
+#X connect 11 12 35 0;
+#X connect 13 0 14 0;
+#X connect 15 0 16 0;
+#X connect 17 0 18 0;
+#X connect 19 0 20 0;
+#X connect 21 0 22 0;
+#X connect 23 0 24 0;
+#X connect 25 0 26 0;
+#X connect 27 0 28 0;
+#X connect 29 0 30 0;
+#X connect 31 0 32 0;
+#X connect 33 0 34 0;
+#X connect 35 0 36 0;
+#X connect 37 0 11 0;
+#X connect 38 0 40 0;
+#X connect 39 0 38 0;
+#X connect 39 1 41 0;
+#X connect 39 2 43 0;
+#X connect 39 3 45 0;
+#X connect 39 4 47 0;
+#X connect 39 5 49 0;
+#X connect 39 6 51 0;
+#X connect 39 7 53 0;
+#X connect 39 8 55 0;
+#X connect 39 9 57 0;
+#X connect 39 10 59 0;
+#X connect 39 11 61 0;
+#X connect 39 12 63 0;
+#X connect 41 0 42 0;
+#X connect 43 0 44 0;
+#X connect 45 0 46 0;
+#X connect 47 0 48 0;
+#X connect 49 0 50 0;
+#X connect 51 0 52 0;
+#X connect 53 0 54 0;
+#X connect 55 0 56 0;
+#X connect 57 0 58 0;
+#X connect 59 0 60 0;
+#X connect 61 0 62 0;
+#X connect 63 0 64 0;
+#X connect 65 0 39 0;
+#X connect 66 0 76 0;
+#X connect 76 0 67 0;
+#X connect 76 1 68 0;
+#X connect 76 2 69 0;
+#X connect 76 3 70 0;
+#X connect 76 4 71 0;
+#X connect 76 5 72 0;
+#X connect 76 6 73 0;
+#X connect 76 7 74 0;
+#X connect 76 8 75 0;
