@@ -37,24 +37,27 @@ int digital_pins [] = {
 
 
 // touch values array size, must be constant
-const int num_of_touch_pins = 11; // total numer of analog pins
+const int num_of_touch_pins = 4; // total numer of touch pins
 int touch_values[num_of_touch_pins];
 int touch_pins[] = {
   0, 1, 3, 4, // list each touch pin to use
 };
 
 
-// LED output
-
-//#define NUMBYTES 2 // number of bytes sent by Pd in a "packet"
-//int incomingByte[NUMBYTES];
-
 void setup() {
-
-
-  pinMode(2, INPUT_PULLUP);  // 
+  pinMode(2, INPUT_PULLUP);  
 
   Serial.begin(9600);
+
+  // MOTION
+
+  if (!bno.begin())
+  {
+    /* There was a problem detecting the BNO055 ... check your connections */
+    Serial.print("Ooops, no BNO055 detected ... Check your wiring or I2C ADDR!");
+    while (1);
+  }
+
 
   // TWIST
 
@@ -66,17 +69,9 @@ void setup() {
 
   Wire.setClock(400000); //Optional: After Twist begin(), increase I2C speed to max, 400kHz
   twist.setColor(100, 10, 50); //Set the Red, Green, and Blue LED brightnesses
-
-  // MOTION
-
-  if (!bno.begin())
-  {
-    /* There was a problem detecting the BNO055 ... check your connections */
-    Serial.print("Ooops, no BNO055 detected ... Check your wiring or I2C ADDR!");
-    while (1);
-  }
-
   delay(1000);
+
+
 }
 
 void loop() {
@@ -95,7 +90,7 @@ void loop() {
 
   Serial.print("count: ");
   Serial.print(twist.getCount());
-  Serial.print(" ");
+  Serial.print(" "); 
   Serial.println(" ");
 
   Serial.print("difference: ");
@@ -143,7 +138,7 @@ void loop() {
   Serial.println(" ");
 
 
-  Serial.print("digital_values: "); // encoder pushbutton
+  Serial.print("digital_values: "); //  pushbutton
   for (int i = 0; i < (num_of_digital_pins); i++) {
     Serial.print(digital_values[i]);
     Serial.print(" ");
@@ -159,18 +154,6 @@ void loop() {
     Serial.print(" ");
   }
   Serial.println(" ");
-
-
-//  // digital output, assign pin and value from Pd
-//
-//  // look for 2 bytes of data and write them
-//  if (Serial.available() > 1) {
-//    for ( int i = 0; i < 2; i++) {
-//      incomingByte[i] = Serial.read();
-//    }
-//    digitalWrite(incomingByte[0], incomingByte[1]);
-//  }
-
 
   delay(50);
 }

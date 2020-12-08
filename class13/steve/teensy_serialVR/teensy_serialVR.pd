@@ -83,7 +83,7 @@ It was written by Alexandros Drymonitis. \; See https://github.com/alexdrymoniti
 #X text 941 382 green;
 #X text 941 400 blue;
 #X obj 966 538 pack f f f, f 27;
-#X obj 44 212 comport 2 9600;
+#X obj 44 212 comport 1 9600;
 #X connect 0 0 74 0;
 #X connect 2 0 74 0;
 #X connect 3 0 4 0;
